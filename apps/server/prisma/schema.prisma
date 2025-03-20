@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  password String @db.VarChar(255)
+  name String?
+  bias Bias @default(OT7)
+  faveAlbums Album[]
+  faveSongs Song[]
+
+}
+
+model Album {
+  id Int @id @default(autoincrement())
+}
+
+model Song {
+  id Int @id @default(autoincrement())
+}
+
+model bangtan {
+  id Int @id @default(autoincrement())
+}
+
+
+enum Bias {
+  OT7
+  RM
+  JIN
+  SUGA
+  JHOPE
+  JIMIN
+  V
+  JK
+}
