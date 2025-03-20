@@ -8,28 +8,56 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  email String @unique
-  password String @db.VarChar(255)
-  name String?
-  bias Bias @default(OT7)
-  faveAlbums Album[]
-  faveSongs Song[]
-
+  id         Int         @id @default(autoincrement())
+  email      String      @unique
+  password   String
+  name       String
+  bias       Bias        @default(OT7)
+  faveAlbums UserAlbum[]
+  faveSongs  UserSong[]
 }
 
 model Album {
-  id Int @id @default(autoincrement())
+  id           Int         @id @default(autoincrement())
+  title        String
+  yearReleased Int
+  artistId     Int
+  artist       Bangtan     @relation(fields: [artistId], references: [id])
+  songs        Song[]
+  UserAlbum    UserAlbum[]
 }
 
 model Song {
-  id Int @id @default(autoincrement())
+  id       Int        @id @default(autoincrement())
+  title    String
+  albumId  Int
+  album    Album      @relation(fields: [albumId], references: [id])
+  UserSong UserSong[]
 }
 
-model bangtan {
-  id Int @id @default(autoincrement())
+model Bangtan {
+  id     Int     @id @default(autoincrement())
+  name   String
+  albums Album[]
 }
 
+model UserAlbum {
+  userId  Int
+  albumId Int
+  user    User  @relation(fields: [userId], references: [id])
+  album   Album @relation(fields: [albumId], references: [id])
+
+  @@id([userId, albumId])
+}
+
+model UserSong {
+  userId Int
+  songId Int
+  user   User @relation(fields: [userId], references: [id])
+  song   Song @relation(fields: [songId], references: [id])
+
+  @@id([userId, songId])
+}
 
 enum Bias {
   OT7
