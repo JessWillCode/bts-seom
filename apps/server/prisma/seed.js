@@ -7,14 +7,90 @@ const main = async () => {
     const bts1 = await prisma.bangtan.create({
         data: {
             name: 'Kim Namjoon',
-            albums: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+            stageNames: ['RM', 'Rap Monster'],
+            albums: [
+                {
+                    "albumTitle": "Indigo",
+                    "yearReleased": 2022,
+                    "songs": [
+                        "Yun",
+                        "Still Life",
+                        "All Day",
+                        "Forg_tful",
+                        "Closer",
+                        "Indigo",
+                        "Forget Me Not",
+                        "Interlude: Reflection",
+                        "Rewind"
+                    ]
+                },
+                {
+                    "albumTitle": "Right Place, Wrong Person",
+                    "yearReleased": 2024,
+                    "songs": [
+                        "Intro (Right Place)",
+                        "Perfectly Imperfect",
+                        "Changing Me",
+                        "Starlight",
+                        "Through The Storm",
+                        "In My Mind",
+                        "Take Me Home",
+                        "Fallen Star",
+                        "To Be Free",
+                        "Look Into Me"
+                    ]
+                },
+                {
+                    "albumTitle": "RM",
+                    "yearReleased": 2015,
+                    "songs": [
+                        "Awakening",
+                        "Joke",
+                        "I Believe",
+                        "Indigo",
+                        "No More Dream",
+                        "Desire",
+                        "The Only",
+                        "Life",
+                        "Lone Ranger",
+                        "The Best"
+                    ]
+                },
+                {
+                    "albumTitle": "mono.",
+                    "yearReleased": 2018,
+                    "songs": [
+                        "Tokyo",
+                        "Moonchild",
+                        "Forever Rain",
+                        "Bad Bye",
+                        "Seoul",
+                        "Everythingoes",
+                        "Happy",
+                        "Skit",
+                        "Jealousy"
+                    ]
+                }
+            ]
+            ,
         },
     });
 
 const bts2 = await prisma.bangtan.create({
     data: {
         name: 'Kim Seokjin',
-        albums: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        stageNames: 'Jin',
+        albums: [
+            {
+                "albumTitle": "Abyss",
+                "yearReleased": 2020,
+                "songs": [
+                    "Abyss",
+                    "Super Tuna"
+                ]
+            },
+
+        ]
     },
 });
 
