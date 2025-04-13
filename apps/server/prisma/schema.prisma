@@ -13,8 +13,15 @@ model User {
   password   String
   name       String
   bias       Bias        @default(OT7)
-  faveAlbums UserAlbum[]
-  faveSongs  UserSong[]
+  faveAlbums FaveAlbum[]
+  faveSongs  FaveSong[]
+}
+
+model Bangtan {
+  id     Int     @id @default(autoincrement())
+  name   String
+  stageNames StageName[]
+  albums Album[]
 }
 
 model Album {
@@ -24,7 +31,7 @@ model Album {
   artistId     Int
   artist       Bangtan     @relation(fields: [artistId], references: [id])
   songs        Song[]
-  UserAlbum    UserAlbum[]
+  FaveAlbum    FaveAlbum[]
 }
 
 model Song {
@@ -32,16 +39,10 @@ model Song {
   title    String
   albumId  Int
   album    Album      @relation(fields: [albumId], references: [id])
-  UserSong UserSong[]
+  FaveSong FaveSong[]
 }
 
-model Bangtan {
-  id     Int     @id @default(autoincrement())
-  name   String
-  albums Album[]
-}
-
-model UserAlbum {
+model FaveAlbum {
   userId  Int
   albumId Int
   user    User  @relation(fields: [userId], references: [id])
@@ -50,13 +51,20 @@ model UserAlbum {
   @@id([userId, albumId])
 }
 
-model UserSong {
+model FaveSong {
   userId Int
   songId Int
   user   User @relation(fields: [userId], references: [id])
   song   Song @relation(fields: [songId], references: [id])
 
   @@id([userId, songId])
+}
+
+model StageName {
+  Id Int @id @default(autoincrement())
+  name String
+  bangtanId Int
+  bangtan Bangtan @relation(fields: [bangtanId], references: [id])
 }
 
 enum Bias {
