@@ -7,764 +7,852 @@ const main = async () => {
     const bts1 = await prisma.bangtan.create({
         data: {
             name: "Kim Namjoon",
-            stageNames: ["RM", "Rap Monster"],
-            albums: [
-                {
-                    "albumTitle": "Indigo",
-                    "yearReleased": 2022,
-                    "songs": [
-                        "Yun",
-                        "Still Life",
-                        "All Day",
-                        "Forg_tful",
-                        "Closer",
-                        "Indigo",
-                        "Forget Me Not",
-                        "Interlude: Reflection",
-                        "Rewind"
-                    ]
-                },
-                {
+            stageNames: {
+                create: [
+                    {name: "RM"},
+                    {name: "Rap Monster"}
+                ]
+            },
+            albums: {
+                create:[
+                    {
+                        "albumTitle": "Indigo",
+                        "yearReleased": 2022,
+                        "songs": {
+                            create: [
+                                {title: "Yun"},
+                                {title: "Still Life"},
+                                {title: "All Day"},
+                                {title: "Forg_tful"},
+                                {title: "Closer"},
+                                {title: "Indigo"},
+                                {title: "Forget Me Not"},
+                                {title: "Interlude: Reflection"},
+                                {title: "Rewind"}
+                            ]
+                        }
+                    },
+                    {
                     "albumTitle": "Right Place, Wrong Person",
                     "yearReleased": 2024,
-                    "songs": [
-                        "Intro (Right Place)",
-                        "Perfectly Imperfect",
-                        "Changing Me",
-                        "Starlight",
-                        "Through The Storm",
-                        "In My Mind",
-                        "Take Me Home",
-                        "Fallen Star",
-                        "To Be Free",
-                        "Look Into Me"
-                    ]
-                },
-                {
-                    "albumTitle": "RM",
-                    "yearReleased": 2015,
-                    "songs": [
-                        "Awakening",
-                        "Joke",
-                        "I Believe",
-                        "Indigo",
-                        "No More Dream",
-                        "Desire",
-                        "The Only",
-                        "Life",
-                        "Lone Ranger",
-                        "The Best"
-                    ]
-                },
-                {
-                    "albumTitle": "mono.",
-                    "yearReleased": 2018,
-                    "songs": [
-                        "Tokyo",
-                        "Moonchild",
-                        "Forever Rain",
-                        "Bad Bye",
-                        "Seoul",
-                        "Everythingoes",
-                        "Happy",
-                        "Skit",
-                        "Jealousy"
-                    ]
-                }
-            ]
-            ,
+                    "songs": {
+                        create: [
+                            {title: "Intro (Right Place)"},
+                            {title: "Perfectly Imperfect"},
+                            {title: "Changing Me"},
+                            {title: "Starlight"},
+                            {title: "Through The Storm"},
+                            {title: "In My Mind"},
+                            {title: "Take Me Home"},
+                            {title: "Fallen Star"},
+                            {title: "To Be Free"},
+                            {title: "Look Into Me"}
+                ]}},
+                    {
+                        "albumTitle": "RM",
+                        "yearReleased": 2015,
+                        "songs": {
+                            create:[
+                                {title: "Awakening"},
+                                {title: "Joke"},
+                                {title: "I Believe"},
+                                {title: "Indigo"},
+                                {title: "No More Dream"},
+                                {title: "Desire"},
+                                {title: "The Only"},
+                                {title: "Life"},
+                                {title: "Lone Ranger"},
+                                {title: "The Best"}
+                ]
+            }
+                    },
+                    {
+                        "albumTitle": "mono.",
+                        "yearReleased": 2018,
+                        "songs": {
+                            create: [
+                                {title: "Tokyo"},
+                                {title: "Moonchild"},
+                                {title: "Forever Rain"},
+                                {title: "Bad Bye"},
+                                {title: "Seoul"},
+                                {title: "Everythingoes"},
+                                {title: "Happy"},
+                                {title: "Skit"},
+                                {title: "Jealousy"}
+                        ]}
+                    }]}
         },
     });
 
 const bts2 = await prisma.bangtan.create({
     data: {
         name: "Kim Seokjin",
-        stageNames: "Jin",
-        albums: [
-            {
-                "albumTitle": "Happy",
-                "yearReleased": 2024,
-                "songs": [
-                    "Running Wild",
-                    "I'll Be There",
-                    "Another Level",
-                    "Falling",
-                    "Heart on the Window (with WENDY)",
-                    "I will come to you"
-                ]
-            },
-        ],
-        songs: [
-            "Abyss",
-            "Super Tuna",
-            "Tonight",
-            "The Astronaut",
-            "Yours",
-            "It's Definitely You"
-        ]
+        stageNames: {
+            create: [
+                {name: "Jin"}
+            ]
+        },
+        albums: {
+            create:[
+                {
+                    "albumTitle": "Happy",
+                    "yearReleased": 2024,
+                    "songs": {
+                        create:[
+                            {title: "Running Wild"},
+                            {title: "I'll Be There"},
+                            {title: "Another Level"},
+                            {title: "Falling"},
+                            {title: "Heart on the Window (with WENDY)"},
+                            {title: "I will come to you"}
+            ]
+        }
+                },
+]
+},
+        songs: {
+            create:[
+                {title: "Abyss"},
+                {title: "Super Tuna"},
+                {title: "Tonight"},
+                {title: "The Astronaut"},
+                {title: "Yours"},
+                {title: "It's Definitely You"}
+]
+}
     },
 });
 
 const bts3 = await prisma.bangtan.create({
     data: {
         name: "Min Yoongi",
-        stageNames: ["Agust D", "SUGA"],
-        albums: [
-            {
-            "albumTitle": "Agust D",
-            "yearReleased": 2016,
-            "songs": [
-                "Intro: Dt sugA (feat. DJ Friz)",
-                "Agust D",
-                "Give It To Me",
-                "724148",
-                "140503 at dawn",
-                "The Last",
-                "Tony Montana",
-                "Interlude: Dream, Reality",
-                "so far away (feat. SURAN)"
-                ]
-            },
-            {
-                "albumTitle": "D-2",
-                "yearReleased": 2020,
-                "songs": [
-                    "Moonlight",
-                    "Daechwita",
-                    "What Do You Think?",
-                    "Strange (feat. RM)",
-                    "28 (feat. NiiHWA)",
-                    "Burn It (feat. MAX)",
-                    "People",
-                    "Honsool",
-                    "Interlude: Set Me Free",
-                    "Dear My Friend (feat. Kim Jong Wan of NELL)"
-                ]
-            },
-            {
-                "albumTitle": "D-Day",
-                "yearReleased": 2023,
-                "songs": [
-                    "D-Day",
-                    "Haegeum",
-                    "HUH?!(feat. J-Hope)",
-                    "AMYGDALA",
-                    "SDL",
-                    "People Pt. 2 (feat. IU)",
-                    "Polar Night",
-                    "Interlude: Dawn",
-                    "Snooze (feat. Ryuichi Sakamoto, WOOSUNG of The Rose)",
-                    "Life Goes On"
-                ]
-            }
-        ],
-        songs: []
+        stageNames: {
+            create: [
+                {name: "Agust D"},
+                {name: "SUGA"}
+            ]
+        },
+        albums: {
+            create:[
+                {
+                    "albumTitle": "Agust D",
+                    "yearReleased": 2016,
+                    "songs": {
+                        create: [
+                            {title: "Intro: Dt sugA (feat. DJ Friz)"},
+                            {title: "Agust D"},
+                            {title: "Give It To Me"},
+                            {title: "724148"},
+                            {title: "140503 at dawn"},
+                            {title: "The Last"},
+                            {title: "Tony Montana"},
+                            {title: "Interlude: Dream, Reality"},
+                            {title: "so far away (feat. SURAN)"}
+                        ]
+                    }
+                },
+    {
+        "albumTitle"
+    :
+        "D-2",
+            "yearReleased"
+    :
+        2020,
+            "songs"
+    :
+        {
+            create: [
+                {title: "Moonlight"},
+                {title: "Daechwita"},
+                {title: "What Do You Think?"},
+                {title: "Strange (feat. RM)"},
+                {title: "28 (feat. NiiHWA)"},
+                {title: "Burn It (feat. MAX)"},
+                {title: "People"},
+                {title: "Honsool"},
+                {title: "Interlude: Set Me Free"},
+                {title: "Dear My Friend (feat. Kim Jong Wan of NELL)"}
+            ]
+        }
+    }
+,
+    {
+        "albumTitle"
+    :
+        "D-Day",
+            "yearReleased"
+    :
+        2023,
+            "songs"
+    :
+        {
+            create: [
+                {title: "D-Day"},
+                {title: "Haegeum"},
+                {title: "HUH?!(feat. J-Hope)"},
+                {title: "AMYGDALA"},
+                {title: "SDL"},
+                {title: "People Pt. 2 (feat. IU)"},
+                {title: "Polar Night"},
+                {title: "Interlude: Dawn"},
+                {title: "Snooze (feat. Ryuichi Sakamoto, WOOSUNG of The Rose)"},
+                {title: "Life Goes On"}
+            ]
+        }
+    }
+]
+}
     },
 });
 
 const bts4 = await prisma.bangtan.create({
     data: {
         name: "Jung Hoseok",
-        stageNames: "J-Hope",
-        albums: [
-            {
-            "albumTitle": "Hope World",
-            "yearReleased": 2018,
-            "songs": [
-                "Hope World",
-                "P.O.P (Piece of Peace)",
-                "Daydream",
-                "Base Line",
-                "Hangsang",
-                "Airplane",
-                "Blue Side (Outro)"
-                ]
-            },
-            {
-                "albumTitle": "Jack in the Box",
-                "yearReleased": 2022,
-                "songs": [
-                    "Intro: Jack in the Box",
-                    "Pandora's Box",
-                    "MORE",
-                    "STOP",
-                    "= (Equal Sign)",
-                    "Music Box: Reflection",
-                    "What if...",
-                    "Safety Zone",
-                    "Future",
-                    "Arson"
-                ]
-            },
-            {
-                "albumTitle": "HOPE ON THE STREET VOL.1",
-                "yearReleased": 2024,
-                "songs": [
-                    "on the street (solo version)",
-                    "i wonder...(with Jung Kook of BTS)",
-                    "lock/unlock (with benny blanco & Nile Rodgers)",
-                    "what if...(dance mix)",
-                    "NEURON (with Gaeko & YOON MIRAE)"
-                ]
-            }
-        ],
-        songs: [
-            "MONA LISA",
-            "Sweet Dreams (feat. Miguel)",
-            "on the street (with J. Cole)",
-            "Chicken Noodle Soup (feat. Becky G)",
-        ]
+        stageNames: {
+            create: [
+                {name: "J-Hope"}
+            ]
+        },
+        albums: {
+            create:[
+                {
+                    "albumTitle": "Hope World",
+                    "yearReleased": 2018,
+                    "songs": {
+                        create: [
+                            {title: "Hope World"},
+                            {title: "P.O.P (Piece of Peace)"},
+                            {title: "Daydream"},
+                            {title: "Base Line"},
+                            {title: "Hangsang"},
+                            {title: "Airplane"},
+                            {title: "Blue Side (Outro)"}
+                        ]
+                    }
+                },
+                {
+                    "albumTitle": "Jack in the Box",
+                    "yearReleased": 2022,
+                    "songs": {
+                        create:[
+                {title: "Intro: Jack in the Box"},
+                {title: "Pandora's Box"},
+                {title: "MORE"},
+                {title: "STOP"},
+                {title: "= (Equal Sign)"},
+                {title: "Music Box: Reflection"},
+                {title: "What if..."},
+                {title: "Safety Zone"},
+                {title: "Future"},
+                {title: "Arson"}
+            ]
+        }
+    },
+                {
+                    "albumTitle": "HOPE ON THE STREET VOL.1",
+                    "yearReleased": 2024,
+                    "songs": {
+                create: [
+                {title: "on the street (solo version)"},
+                {title: "i wonder...(with Jung Kook of BTS)"},
+                {title: "lock/unlock (with benny blanco & Nile Rodgers)"},
+                {title: "what if...(dance mix)"},
+                {title: "NEURON (with Gaeko & YOON MIRAE)"}
+            ]
+        }
+    }
+]},
+        songs: {
+            create: [
+                {title: "MONA LISA"},
+                {title: "Sweet Dreams (feat. Miguel)"},
+                {title: "on the street (with J. Cole)"},
+                {title: "Chicken Noodle Soup (feat. Becky G)"},
+]
+}
     },
 });
 
 const bts5 = await prisma.bangtan.create({
     data: {
         name: "Park Jimin",
-        stageNames: "Jimin",
-        albums: [            {
-            "albumTitle": "FACE",
-            "yearReleased": 2023,
-            "songs": [
-                "Face-off",
-                "Interlude: Dive",
-                "Like Crazy",
-                "Alone",
-                "Set Me Free Pt.2",
-                "Like Crazy (English Version)"
-            ]
-        },
-            {
-                "albumTitle": "MUSE",
-                "yearReleased": 2024,
-                "songs": [
-                    "Rebirth (Intro)",
-                    "Interlude: Showtime",
-                    "Smeraldo Garden Marching Band (feat. Loco)",
-                    "Slow Dance (feat. Sofia Carson)",
-                    "Be Mine",
-                    "Who",
-                    "Closer Than This"
-                ]
-            }
-            ],
-        songs: [
-            "With You",
-            "Christmas Love",
-            "Promise",
-            "Be Mine (English Version)"
-        ]
+        stageNames: {
+            create: [
+                {name: "Jimin"}
+            ]},
+        albums: {
+            create:[
+                {
+                    "albumTitle": "FACE",
+                    "yearReleased": 2023,
+                    "songs": {
+                        create:[
+                            {title: "Face-off"},
+                            {title: "Interlude: Dive"},
+                            {title: "Like Crazy"},
+                            {title: "Alone"},
+                            {title: "Set Me Free Pt.2"},
+                            {title: "Like Crazy (English Version)"}
+                    ]}
+                },
+                {
+                    "albumTitle": "MUSE",
+                    "yearReleased": 2024,
+                    "songs": {
+                        create: [
+                            {title: "Rebirth (Intro)"},
+                            {title: "Interlude: Showtime"},
+                            {title: "Smeraldo Garden Marching Band (feat. Loco)"},
+                            {title: "Slow Dance (feat. Sofia Carson)"},
+                            {title: "Be Mine"},
+                            {title: "Who"},
+                            {title: "Closer Than This"}
+                    ]}
+                }
+            ]},
+        songs: {
+            create:[
+                {title: "With You"},
+                {title: "Christmas Love"},
+                {title: "Promise"},
+                {title: "Be Mine (English Version)"}
+            ]}
     },
 });
 
 const bts6 = await prisma.bangtan.create({
     data: {
         name: "Kim Taehyung",
-        stageNames: "V",
-        albums: [
-            {
-                "albumTitle": "Layover",
-                "yearReleased": 2023,
-                "songs": [
-                    "Rainy Days",
-                    "Blue",
-                    "Love Me Again",
-                    "Slow Dancing",
-                    "For Us",
-                    "Slow Dancing (Piano Ver.)"
-                ]
-            }
-        ],
-        songs: [
-            "It's Definitely You",
-            "Scenery",
-            "Winter Bear",
-            "Sweet Night",
-            "Snow Flower",
-            "Christmas Tree",
-            "wherever u r (ft. UMI)",
-            "FRI(END)S",
-            "Winter Ahead (with PARK HYO SHIN)",
-            "White Christmas (with Bing Crosby)"
-        ]
+        stageNames: {
+            create: [
+                {name: "V"}
+            ]},
+        albums: {
+            create: [{
+                    "albumTitle": "Layover",
+                    "yearReleased": 2023,
+                    "songs": {
+                        create: [
+                            {title: "Rainy Days"},
+                            {title: "Blue"},
+                            {title: "Love Me Again"},
+                            {title: "Slow Dancing"},
+                            {title: "For Us"},
+                            {title: "Slow Dancing (Piano Ver.)"}
+                    ]}
+            }]
+        },
+        songs: {
+            create: [
+                {title: "It's Definitely You"},
+                {title: "Scenery"},
+                {title: "Winter Bear"},
+                {title: "Sweet Night"},
+                {title: "Snow Flower"},
+                {title: "Christmas Tree"},
+                {title: "wherever u r (ft. UMI)"},
+                {title: "FRI(END)S"},
+                {title: "Winter Ahead (with PARK HYO SHIN)"},
+                {title: "White Christmas (with Bing Crosby)"}
+            ]}
     },
 });
 
 const bts7 = await prisma.bangtan.create({
     data: {
         name: "Jeon Jungkook",
-        stageNames: "Jungkook",
-        albums: [
-            {
-                "albumTitle": "Golden",
-                "yearReleased": 2023,
-                "songs": [
-                    "3D (feat. Jack Harlow)",
-                    "Closer to You (feat. Major Lazer)",
-                    "Seven (feat. Latto)(Explicit Ver.)",
-                    "Seven (feat. Latto)(Clean Ver.)",
-                    "Standing Next to You",
-                    "Yes or No",
-                    "Please Don't Change (feat. DJ Snake)",
-                    "Hate You",
-                    "Somebody",
-                    "Too Sad to Dance",
-                    "Shot Glass of Tears"
-                ]
-            }
-        ],
-        songs: [
-            "Never Let Go",
-            "Standing Next to You (USHER Remix)",
-            "3D (Justin Timberlake Remix)",
-            "TOO MUCH (with The Kid LAROI and Central Cee)",
-            "Dreamers [Music from the FIFA World Cup Qatar 2022 Official Soundtrack]",
-            "My You",
-            "Stay Alive (Prod. SUGA of BTS)",
-            "Still with You",
-            "Left and Right (with Charlie Puth)"
-        ]
+        stageNames: {
+            create: [
+                {name: "Jungkook"}
+            ]},
+        albums: {
+            create: [
+                {
+                    "albumTitle": "Golden",
+                    "yearReleased": 2023,
+                    "songs": {
+                        create: [
+                            {title: "3D (feat. Jack Harlow)"},
+                            {title: "Closer to You (feat. Major Lazer)"},
+                            {title: "Seven (feat. Latto)(Explicit Ver.)"},
+                            {title: "Seven (feat. Latto)(Clean Ver.)"},
+                            {title: "Standing Next to You"},
+                            {title: "Yes or No"},
+                            {title: "Please Don't Change (feat. DJ Snake)"},
+                            {title: "Hate You"},
+                            {title: "Somebody"},
+                            {title: "Too Sad to Dance"},
+                            {title: "Shot Glass of Tears"}
+                    ]}}
+            ]
+        },
+        songs: {
+            create: [
+                {title: "Never Let Go"},
+                {title: "Standing Next to You (USHER Remix)"},
+                {title: "3D (Justin Timberlake Remix)"},
+                {title: "TOO MUCH (with The Kid LAROI and Central Cee)"},
+                {title: "Dreamers [Music from the FIFA World Cup Qatar 2022 Official Soundtrack]"},
+                {title: "My You"},
+                {title: "Stay Alive (Prod. SUGA of BTS)"},
+                {title: "Still with You"},
+                {title: "Left and Right (with Charlie Puth)"}
+]
+}
     },
 });
 
 const ot7 = await prisma.bangtan.create({
     data: {
         name: "BTS",
-        stageNames: ["RM", "Jin", "SUGA", "J-Hope", "Jimin", "V", "Jungkook"],
-        albums: [
-            {
-                "albumTitle": "2 Cool 4 Skool",
-                "yearReleased": 2013,
-                "songs": [
-                    "Intro: 2 Cool 4 Skool",
-                    "We Are Bulletproof Pt.2",
-                    "Skit: Circle Room Talk",
-                    "No More Dream",
-                    "Interlude",
-                    "Like",
-                    "Outro: Circle Room Cypher"
-                ]
-            },
-            {
-                "albumTitle": "O!RUL8,2?",
-                "yearReleased": 2013,
-                "songs": [
-                    "Intro: O!RUL8,2?",
-                    "N.O",
-                    "We On",
-                    "Skit: R U Happy Now?",
-                    "If I Ruled the World",
-                    "Coffee",
-                    "BTS Cypher Pt.1",
-                    "Attack on Bangtan",
-                    "Paldogangsan",
-                    "Outro: Luv in Skool"
-                ]
-            },
-            {
-                "albumTitle": "Skool Luv Affair",
-                "yearReleased": 2014,
-                "songs": [
-                    "Intro: Skool Luv Affair",
-                    "Boy in Luv",
-                    "Skit: Soulmate",
-                    "Where You From",
-                    "Just One Day",
-                    "Tomorrow",
-                    "BTS Cypher Pt.2: Triptych",
-                    "Spine Breaker",
-                    "Jump",
-                    "Outro: Propose"
-                ]
-            },
-            {
-                "albumTitle": "Skool Luv Affair (Special Addition)",
-                "yearReleased": 2014,
-                "songs": [
-                    "Miss Right",
-                    "Like (Slow Jam Remix)",
-                    "Intro: Skool Luv Affair",
-                    "Boy in Luv",
-                    "Skit: Soulmate",
-                    "Where You From",
-                    "Just One Day",
-                    "Tomorrow",
-                    "BTS Cypher Pt.2: Triptych",
-                    "Spine Breaker",
-                    "Jump",
-                    "Outro: Propose"
-                ]
-            },
-            {
-                "albumTitle": "Dark & Wild",
-                "yearReleased": 2014,
-                "songs": [
-                    "Intro: What Am I to You",
-                    "Danger",
-                    "War of Hormone",
-                    "Hip Hop Phile",
-                    "Let Me Know",
-                    "Rain",
-                    "BTS Cypher Pt.3: Killer",
-                    "Interlude: What Are You Doing Now",
-                    "Could You Turn off Your Cell Phone",
-                    "Embarrassed",
-                    "24/7=Heaven",
-                    "Look Here",
-                    "So 4 more",
-                    "Outro: Do You Think It Makes Sense?"
-                ]
-            },
-            {
-                "albumTitle": "Wake Up (Standard Edition)",
-                "yearReleased": 2014,
-                "songs": [
-                    "Intro.",
-                    "The Stars",
-                    "Jump - Japanese Ver.",
-                    "Danger - Japanese Ver.",
-                    "Boy in Luv - Japanese Ver.",
-                    "Just One Day",
-                    "line!",
-                    "line!Pt.2 -Ano Bashode-",
-                    "No More Dream - Japanese Ver.",
-                    "Shingeki no Boudan - Japanese Ver.",
-                    "N.O - Japanese Ver.",
-                    "Wake Up",
-                    "Outro."
-                ]
-            },
-            {
-                "albumTitle": "The Most Beautiful Moment in Life Pt.1",
-                "yearReleased": 2015,
-                "songs": [
-                    "Intro: The Most Beautiful Moment in Life",
-                    "I Need U",
-                    "Hold Me Tight",
-                    "Skit: Expectation!",
-                    "Dope",
-                    "Boyz with Fun",
-                    "Converse High",
-                    "Moving On",
-                    "Outro: Love Is Not Over"
-                ]
-            },
-            {
-                "albumTitle": "The Most Beautiful Moment in Life Pt.2",
-                "yearReleased": 2015,
-                "songs": [
-                    "Intro: Never Mind",
-                    "Run",
-                    "Butterfly",
-                    "Whalien 52",
-                    "Ma City",
-                    "Silver Spoon",
-                    "Skit: One Night in a Strange City",
-                    "Autumn Leaves",
-                    "Outro: House of Cards"
-                ]
-            },
-            {
-                "albumTitle": "The Most Beautiful Moment in Life: Young Forever",
-                "yearReleased": 2016,
-                "songs": [
-                    "Intro: The Most Beautiful Moment in Life",
-                    "I Need U",
-                    "Hold Me Tight",
-                    "Autumn Leaves",
-                    "Butterfly (Prologue Mix)",
-                    "Run",
-                    "Ma City",
-                    "Silver Spoon",
-                    "Dope",
-                    "Burning Up (Fire)",
-                    "Save Me",
-                    "Epilogue: Young Forever",
-                    "Converse High",
-                    "Moving On",
-                    "Whalien 52",
-                    "House of Cards (Full Length Edition)",
-                    "Love is Not Over (Full Length Edition)",
-                    "I Need U (Urban Mix)",
-                    "I Need U (Remix)",
-                    "Run (Ballad Mix)",
-                    "Run (Alternative Mix)",
-                    "Butterfly (Alternative Mix)"
-                ]
-            },
-            {
-                "albumTitle": "Youth",
-                "yearReleased": 2016,
-                "songs": [
-                    "Introduction: Youth",
-                    "Run - Japanese Ver.",
-                    "Fire - Japanese Ver.",
-                    "Dope - Chou Yabee! --Japanese Ver.",
-                    "Good Day",
-                    "Save Me - Japanese Ver.",
-                    "Funtan Syounendan - Japanese Ver.",
-                    "Peppuse - Japanese Ver.",
-                    "Wishing On A Star",
-                    "Butterfly - Japanese Ver.",
-                    "I Need U - Japanese Ver",
-                    "Epilogue: Young Forever - Japanese Ver."
-                ]
-            },
-            {
-                "albumTitle": "Wings",
-                "yearReleased": 2016,
-                "songs": [
-                    "Intro: Boy Meets Evil",
-                    "Blood Sweat & Tears",
-                    "Begin",
-                    "Lie",
-                    "Stigma",
-                    "First Love",
-                    "Reflection",
-                    "MAMA",
-                    "Awake",
-                    "Lost",
-                    "BTS Cypher 4",
-                    "Am I Wrong",
-                    "21st Century Girl",
-                    "2!3!",
-                    "Interlude: Wings"
-                ]
-            },
-            {
-                "albumTitle": "You Never Walk Alone",
-                "yearReleased": 2017,
-                "songs": [
-                    "Intro: Boy Meets Evil",
-                    "Blood Sweat & Tears",
-                    "Begin",
-                    "Lie",
-                    "Stigma",
-                    "First Love",
-                    "Reflection",
-                    "MAMA",
-                    "Awake",
-                    "Lost",
-                    "BTS Cypher 4",
-                    "Am I Wrong",
-                    "21st Century Girl",
-                    "2!3!",
-                    "Spring Day",
-                    "Not Today",
-                    "Outro: Wings",
-                    "A Supplementary Story: You Never Walk Alone"
-                ]
-            },
-            {
-                "albumTitle": "Love Yourself 'Her'",
-                "yearReleased": 2017,
-                "songs": [
-                    "Intro: Serendipity",
-                    "DNA",
-                    "Best Of Me",
-                    "dimple",
-                    "Pied Piper",
-                    "Skit: Billboard Music Awards Speech",
-                    "Mic Drop",
-                    "Go Go",
-                    "Outro: Her"
-                ]
-            },
-            {
-                "albumTitle": "FACE YOURSELF",
-                "yearReleased": 2018,
-                "songs": [
-                    "INTRO: Ringwanderung",
-                    "Best Of Me - Japanese Ver.",
-                    "Blood Sweat & Tears (Japanese Ver.)",
-                    "DNA - Japanese Ver.",
-                    "Not Today - Japanese Ver.",
-                    "MIC Drop - Japanese Ver.",
-                    "Don't Leave Me",
-                    "Go Go - Japanese Ver.",
-                    "Crystal Snow",
-                    "Spring Day - Japanese Ver.",
-                    "Let Go",
-                    "Outro: Crack"
-                ]
-            },
-            {
-                "albumTitle": "Love Yourself 'Tear'",
-                "yearReleased": 2018,
-                "songs": [
-                    "Intro: Singularity",
-                    "FAKE LOVE",
-                    "The Truth Untold (feat. Steve Aoki)",
-                    "134340",
-                    "Paradise",
-                    "Love Maze",
-                    "Magic Shop",
-                    "Airplane Pt.2",
-                    "Anpanman",
-                    "So What",
-                    "Outro: Tear"
-                ]
-            },
-            {
-                "albumTitle": "Love Yourself 'Answer'",
-                "yearReleased": 2018,
-                "songs": [
-                    "Euphoria",
-                    "Trivia: Just Dance",
-                    "Serendipity (Full Length Edition)",
-                    "DNA",
-                    "Dimple",
-                    "Trivia: Love",
-                    "Her",
-                    "Singularity",
-                    "FAKE LOVE",
-                    "The Truth Untold",
-                    "Trivia: Seesaw",
-                    "Tear",
-                    "Epiphany",
-                    "I'm Fine",
-                    "IDOL",
-                    "Answer: Love Myself",
-                    "Magic Shop",
-                    "Best Of Me",
-                    "Airplane Pt.2",
-                    "Go Go",
-                    "Anpanman",
-                    "MIC Drop",
-                    "DNA (Pedal 2 LA Mix)",
-                    "FAKE LOVE (Rocking Vibe Mix)",
-                    "MIC Drop (Steve Aoki Remix)(Full Length Edition)",
-                    "IDOL (feat. Nicki Minaj)"
-                ]
-            },
-            {
-                "albumTitle": "MAP OF THE SOUL: PERSONA",
-                "yearReleased": 2019,
-                "songs": [
-                    "Intro: Persona",
-                    "Boy With Luv (feat. Halsey)",
-                    "Mikrokosmos",
-                    "Make It Right",
-                    "HOME",
-                    "Jamais Vu",
-                    "Dionysus"
-                ]
-            },
-            {
-                "albumTitle": "MAP OF THE SOUL: 7",
-                "yearReleased": 2020,
-                "songs": [
-                    "Intro: Persona",
-                    "Boy With Luv (feat. Halsey)",
-                    "Make It Right",
-                    "Jamais Vu",
-                    "Dionysus",
-                    "Interlude: Shadow",
-                    "Black Swan",
-                    "Filter",
-                    "My Time",
-                    "Louder than Bombs",
-                    "ON",
-                    "UGH!",
-                    "00:00 (Zero O'Clock)",
-                    "Inner Child",
-                    "Friends",
-                    "Moon",
-                    "Respect",
-                    "We are Bulletproof: the Eternal",
-                    "Outro: Ego",
-                    "ON (feat. Sia)"
-                ]
-            },
-            {
-                "albumTitle": "MAP OF THE SOUL: 7 ~THE JOURNEY~",
-                "yearReleased": 2020,
-                "songs": [
-                    "Intro: Calling",
-                    "Stay Gold",
-                    "Boy With Luv - Japanese Ver.",
-                    "Make It Right - Japanese Ver.",
-                    "Dionysus - Japanese Ver.",
-                    "IDOL - Japanese Ver.",
-                    "Airplane Pt.2 - Japanese Ver.",
-                    "FAKE LOVE - Japanese Ver.",
-                    "Black Swan - Japanese Ver.",
-                    "ON - Japanese Ver.",
-                    "Lights",
-                    "Your eyes tell",
-                    "OUTRO: The Journey"
-                ]
-            },
-            {
-                "albumTitle": "BE",
-                "yearReleased": 2020,
-                "songs": [
-                    "Life Goes On",
-                    "Fly To My Room",
-                    "Blue & Grey",
-                    "Skit",
-                    "Telepathy",
-                    "Dis-ease",
-                    "Stay",
-                    "Dynamite"
-                ]
-            },
-            {
-                "albumTitle": "Proof",
-                "yearReleased": 2022,
-                "songs": [
-                    "Born Singer",
-                    "No More Dream",
-                    "N.O",
-                    "Boy In Luv",
-                    "Danger",
-                    "I NEED U",
-                    "RUN",
-                    "Burning Up (FIRE)",
-                    "Blood Sweat & Tears",
-                    "Spring Day",
-                    "DNA",
-                    "FAKE LOVE",
-                    "IDOL",
-                    "Boy With Luv (feat. Halsey)",
-                    "ON",
-                    "Dynamite",
-                    "Life Goes On",
-                    "Butter",
-                    "Yet To Come",
-                    "Run BTS",
-                    "Intro: Persona",
-                    "Stay",
-                    "Moon",
-                    "Jamais Vu",
-                    "Trivia: Seesaw",
-                    "BTS Cypher PT.3: KILLER (feat. Supreme Boi)",
-                    "Outro: Ego",
-                    "Her",
-                    "Filer",
-                    "Friends",
-                    "Singularity",
-                    "00:00 (Zero O'Clock)",
-                    "Euphoria",
-                    "Dimple",
-                    "For Youth"
-                ]
-            }
-        ],
-        songs: [
-            "Dream Glow (BTS World Original Soundtrack)",
-            "A Brand New day (BTS World Original Soundtrack)",
-            "All Night (BTS World Original Soundtrack)",
-            "Waste It On Me (with Steve Aoki)",
-            "Savage Love",
-            "Film out",
-            "Bad Decisions (with Snoop Dogg)",
-            "The Planet",
-            "Take Two",
-
-
-        ]
+        stageNames: {
+            create:[
+                {name: "RM"},
+                {name: "Jin"},
+                {name: "SUGA"},
+                {name: "J-Hope"},
+                {name: "Jimin"},
+                {name: "V"},
+                {name: "Jungkook"}
+            ]},
+        albums: {
+            create: [
+                {
+                    "albumTitle": "2 Cool 4 Skool",
+                    "yearReleased": 2013,
+                    "songs": {
+                        create: [
+                            {title: "Intro: 2 Cool 4 Skool"},
+                            {title: "We Are Bulletproof Pt.2"},
+                            {title: "Skit: Circle Room Talk"},
+                            {title: "No More Dream"},
+                            {title: "Interlude"},
+                            {title: "Like"},
+                            {title: "Outro: Circle Room Cypher"}
+            ]}},
+                {
+        "albumTitle": "O!RUL8,2?",
+        "yearReleased": 2013,
+        "songs": {
+            create: [
+                {title: "Intro: O!RUL8,2?"},
+                {title: "N.O"},
+                {title: "We On"},
+                {title: "Skit: R U Happy Now?"},
+                {title: "If I Ruled the World"},
+                {title: "Coffee"},
+                {title: "BTS Cypher Pt.1"},
+                {title: "Attack on Bangtan"},
+                {title: "Paldogangsan"},
+                {title: "Outro: Luv in Skool"}
+            ]
+        }
     },
-});
+                {
+        "albumTitle": "Skool Luv Affair",
+        "yearReleased": 2014,
+        "songs": {
+            create:[
+                {title: "Intro: Skool Luv Affair"},
+                {title: "Boy in Luv"},
+                {title: "Skit: Soulmate"},
+                {title: "Where You From"},
+                {title: "Just One Day"},
+                {title: "Tomorrow"},
+                {title: "BTS Cypher Pt.2: Triptych"},
+                {title: "Spine Breaker"},
+                {title: "Jump"},
+                {title: "Outro: Propose"}
+            ]}},
+                {
+        "albumTitle": "Skool Luv Affair (Special Addition)",
+        "yearReleased": 2014,
+        "songs": {
+            create: [
+                {title: "Miss Right"},
+                {title: "Like (Slow Jam Remix)"},
+                {title: "Intro: Skool Luv Affair"},
+                {title: "Boy in Luv"},
+                {title: "Skit: Soulmate"},
+                {title: "Where You From"},
+                {title: "Just One Day"},
+                {title: "Tomorrow"},
+                {title: "BTS Cypher Pt.2: Triptych"},
+                {title: "Spine Breaker"},
+                {title: "Jump"},
+                {title: "Outro: Propose"}
+            ]}},
+                {
+        "albumTitle": "Dark & Wild",
+        "yearReleased": 2014,
+        "songs": {
+            create: [
+                {title: "Intro: What Am I to You"},
+                {title: "Danger"},
+                {title: "War of Hormone"},
+                {title: "Hip Hop Phile"},
+                {title: "Let Me Know"},
+                {title: "Rain"},
+                {title: "BTS Cypher Pt.3: Killer"},
+                {title: "Interlude: What Are You Doing Now"},
+                {title: "Could You Turn off Your Cell Phone"},
+                {title: "Embarrassed"},
+                {title: "24/7=Heaven"},
+                {title: "Look Here"},
+                {title: "So 4 more"},
+                {title: "Outro: Do You Think It Makes Sense?"}
+            ]}},
+                {
+                    "albumTitle": "Wake Up (Standard Edition)",
+                    "yearReleased": 2014,
+                    "songs": {
+                        create: [
+                            {title: "Intro."},
+                            {title: "The Stars"},
+                            {title: "Jump - Japanese Ver."},
+                            {title: "Danger - Japanese Ver."},
+                            {title: "Boy in Luv - Japanese Ver."},
+                            {title: "Just One Day"},
+                            {title: "line!"},
+                            {title: "line!Pt.2 -Ano Bashode-"},
+                            {title: "No More Dream - Japanese Ver."},
+                            {title: "Shingeki no Boudan - Japanese Ver."},
+                            {title: "N.O - Japanese Ver."},
+                            {title: "Wake Up"},
+                            {title: "Outro."}
+                        ]}},
+                {
+                    "albumTitle": "The Most Beautiful Moment in Life Pt.1",
+                    "yearReleased": 2015,
+                    "songs": {
+                        create: [
+                            {title: "Intro: The Most Beautiful Moment in Life"},
+                            {title: "I Need U"},
+                            {title: "Hold Me Tight"},
+                            {title: "Skit: Expectation!"},
+                            {title: "Dope"},
+                            {title: "Boyz with Fun"},
+                            {title: "Converse High"},
+                            {title: "Moving On"},
+                            {title: "Outro: Love Is Not Over"}
+                        ]}},
+                {
+                    "albumTitle": "The Most Beautiful Moment in Life Pt.2",
+                    "yearReleased": 2015,
+                    "songs": {
+                        create: [
+                            {title: "Intro: Never Mind"},
+                            {title: "Run"},
+                            {title: "Butterfly"},
+                            {title: "Whalien 52"},
+                            {title: "Ma City"},
+                            {title: "Silver Spoon"},
+                            {title: "Skit: One Night in a Strange City"},
+                            {title: "Autumn Leaves"},
+                            {title: "Outro: House of Cards"}
+            ]}},
+                {
+                    "albumTitle": "The Most Beautiful Moment in Life: Young Forever",
+                    "yearReleased": 2016,
+                    "songs": {
+                        create:[
+                            {title: "Intro: The Most Beautiful Moment in Life"},
+                            {title: "I Need U"},
+                            {title: "Hold Me Tight"},
+                            {title: "Autumn Leaves"},
+                            {title: "Butterfly (Prologue Mix)"},
+                            {title: "Run"},
+                            {title: "Ma City"},
+                            {title: "Silver Spoon"},
+                            {title: "Dope"},
+                            {title: "Burning Up (Fire)"},
+                            {title: "Save Me"},
+                            {title: "Epilogue: Young Forever"},
+                            {title: "Converse High"},
+                            {title: "Moving On"},
+                            {title: "Whalien 52"},
+                            {title: "House of Cards (Full Length Edition)"},
+                            {title: "Love is Not Over (Full Length Edition)"},
+                            {title: "I Need U (Urban Mix)"},
+                            {title: "I Need U (Remix)"},
+                            {title: "Run (Ballad Mix)"},
+                            {title: "Run (Alternative Mix)"},
+                            {title: "Butterfly (Alternative Mix)"}
+            ]}},
+                {
+        "albumTitle": "Youth",
+        "yearReleased": 2016,
+        "songs": {
+            create:[
+                {title: "Introduction: Youth"},
+                {title: "Run - Japanese Ver."},
+                {title: "Fire - Japanese Ver."},
+                {title: "Dope - Chou Yabee! --Japanese Ver."},
+                {title: "Good Day"},
+                {title: "Save Me - Japanese Ver."},
+                {title: "Funtan Syounendan - Japanese Ver."},
+                {title: "Peppuse - Japanese Ver."},
+                {title: "Wishing On A Star"},
+                {title: "Butterfly - Japanese Ver."},
+                {title: "I Need U - Japanese Ver"},
+                {title: "Epilogue: Young Forever - Japanese Ver."}
+            ]}},
+                {
+                    "albumTitle": "Wings",
+                    "yearReleased": 2016,
+                    "songs": {
+                        create:[
+                            {title: "Intro: Boy Meets Evil"},
+                            {title: "Blood Sweat & Tears"},
+                            {title: "Begin"},
+                            {title: "Lie"},
+                            {title: "Stigma"},
+                            {title: "First Love"},
+                            {title: "Reflection"},
+                            {title: "MAMA"},
+                            {title: "Awake"},
+                            {title: "Lost"},
+                            {title: "BTS Cypher 4"},
+                            {title: "Am I Wrong"},
+                            {title: "21st Century Girl"},
+                            {title: "2!3!"},
+                            {title: "Interlude: Wings"}
+            ]}},
+                {
+                    "albumTitle": "You Never Walk Alone",
+                    "yearReleased": 2017,
+                    "songs": {
+                        create:[
+                            {title: "Intro: Boy Meets Evil"},
+                            {title: "Blood Sweat & Tears"},
+                            {title: "Begin"},
+                            {title: "Lie"},
+                            {title: "Stigma"},
+                            {title: "First Love"},
+                            {title: "Reflection"},
+                            {title: "MAMA"},
+                            {title: "Awake"},
+                            {title: "Lost"},
+                            {title: "BTS Cypher 4"},
+                            {title: "Am I Wrong"},
+                            {title: "21st Century Girl"},
+                            {title: "2!3!"},
+                            {title: "Spring Day"},
+                            {title: "Not Today"},
+                            {title: "Outro: Wings"},
+                            {title: "A Supplementary Story: You Never Walk Alone"}
+                    ]}},
+                {
+                    "albumTitle": "Love Yourself 'Her'",
+                    "yearReleased": 2017,
+                    "songs": {
+                        create: [
+                            {title: "Intro: Serendipity"},
+                            {title: "DNA"},
+                            {title: "Best Of Me"},
+                            {title: "dimple"},
+                            {title: "Pied Piper"},
+                            {title: "Skit: Billboard Music Awards Speech"},
+                            {title: "Mic Drop"},
+                            {title: "Go Go"},
+                            {title: "Outro: Her"}
+                    ]}},
+                {
+                    "albumTitle": "FACE YOURSELF",
+                    "yearReleased": 2018,
+                    "songs": {
+                        create: [
+                            {title: "INTRO: Ringwanderung"},
+                            {title: "Best Of Me - Japanese Ver."},
+                            {title: "Blood Sweat & Tears (Japanese Ver.)"},
+                            {title: "DNA - Japanese Ver."},
+                            {title: "Not Today - Japanese Ver."},
+                            {title: "MIC Drop - Japanese Ver."},
+                            {title: "Don't Leave Me"},
+                            {title: "Go Go - Japanese Ver."},
+                            {title: "Crystal Snow"},
+                            {title: "Spring Day - Japanese Ver."},
+                            {title: "Let Go"},
+                            {title: "Outro: Crack"}
+                    ]}},
+                {
+                    "albumTitle": "Love Yourself 'Tear'",
+                    "yearReleased": 2018,
+                    "songs": {
+                        create: [
+                            {title: "Intro: Singularity"},
+                            {title: "FAKE LOVE"},
+                            {title: "The Truth Untold (feat. Steve Aoki)"},
+                            {title: "134340"},
+                            {title: "Paradise"},
+                            {title: "Love Maze"},
+                            {title: "Magic Shop"},
+                            {title: "Airplane Pt.2"},
+                            {title: "Anpanman"},
+                            {title: "So What"},
+                            {title: "Outro: Tear"}
+                    ]}},
+                {
+                    "albumTitle": "Love Yourself 'Answer'",
+                    "yearReleased": 2018,
+                    "songs": {
+                        create: [
+                            {title: "Euphoria"},
+                            {title: "Trivia: Just Dance"},
+                            {title: "Serendipity (Full Length Edition)"},
+                            {title: "DNA"},
+                            {title: "Dimple"},
+                            {title: "Trivia: Love"},
+                            {title: "Her"},
+                            {title: "Singularity"},
+                            {title: "FAKE LOVE"},
+                            {title: "The Truth Untold"},
+                            {title: "Trivia: Seesaw"},
+                            {title: "Tear"},
+                            {title: "Epiphany"},
+                            {title: "I'm Fine"},
+                            {title: "IDOL"},
+                            {title: "Answer: Love Myself"},
+                            {title: "Magic Shop"},
+                            {title: "Best Of Me"},
+                            {title: "Airplane Pt.2"},
+                            {title: "Go Go"},
+                            {title: "Anpanman"},
+                            {title: "MIC Drop"},
+                            {title: "DNA (Pedal 2 LA Mix)"},
+                            {title: "FAKE LOVE (Rocking Vibe Mix)"},
+                            {title: "MIC Drop (Steve Aoki Remix)(Full Length Edition)"},
+                            {title: "IDOL (feat. Nicki Minaj)"}
+                    ]}},
+                {
+                    "albumTitle": "MAP OF THE SOUL: PERSONA",
+                    "yearReleased": 2019,
+                    "songs": {
+                        create: [
+                            {title: "Intro: Persona"},
+                            {title: "Boy With Luv (feat. Halsey)"},
+                            {title: "Mikrokosmos"},
+                            {title: "Make It Right"},
+                            {title: "HOME"},
+                            {title: "Jamais Vu"},
+                            {title: "Dionysus"}
+                    ]}},
+                {
+                    "albumTitle": "MAP OF THE SOUL: 7",
+                    "yearReleased": 2020,
+                    "songs": {
+                        create: [
+                            {title: "Intro: Persona"},
+                            {title: "Boy With Luv (feat. Halsey)"},
+                            {title: "Make It Right"},
+                            {title: "Jamais Vu"},
+                            {title: "Dionysus"},
+                            {title: "Interlude: Shadow"},
+                            {title: "Black Swan"},
+                            {title: "Filter"},
+                            {title: "My Time"},
+                            {title: "Louder than Bombs"},
+                            {title: "ON"},
+                            {title: "UGH!"},
+                            {title: "00:00 (Zero O'Clock)"},
+                            {title: "Inner Child"},
+                            {title: "Friends"},
+                            {title: "Moon"},
+                            {title: "Respect"},
+                            {title: "We are Bulletproof: the Eternal"},
+                            {title: "Outro: Ego"},
+                            {title: "ON (feat. Sia)"}
+                    ]}},
+                {
+                    "albumTitle": "MAP OF THE SOUL: 7 ~THE JOURNEY~",
+                    "yearReleased": 2020,
+                    "songs": {
+                        create: [
+                            {title: "Intro: Calling"},
+                            {title: "Stay Gold"},
+                            {title: "Boy With Luv - Japanese Ver."},
+                            {title: "Make It Right - Japanese Ver."},
+                            {title: "Dionysus - Japanese Ver."},
+                            {title: "IDOL - Japanese Ver."},
+                            {title: "Airplane Pt.2 - Japanese Ver."},
+                            {title: "FAKE LOVE - Japanese Ver."},
+                            {title: "Black Swan - Japanese Ver."},
+                            {title: "ON - Japanese Ver."},
+                            {title: "Lights"},
+                            {title: "Your eyes tell"},
+                            {title: "OUTRO: The Journey"}
+                    ]}},
+                {
+                    "albumTitle": "BE",
+                    "yearReleased": 2020,
+                    "songs": {
+                        create:[
+                            {title: "Life Goes On"},
+                            {title: "Fly To My Room"},
+                            {title: "Blue & Grey"},
+                            {title: "Skit"},
+                            {title: "Telepathy"},
+                            {title: "Dis-ease"},
+                            {title: "Stay"},
+                            {title: "Dynamite"}
+                    ]}},
+                {
+                    "albumTitle": "Proof",
+                    "yearReleased": 2022,
+                    "songs": {
+                        create:[
+                            {title: "Born Singer"},
+                            {title: "No More Dream"},
+                            {title: "N.O"},
+                            {title: "Boy In Luv"},
+                            {title: "Danger"},
+                            {title: "I NEED U"},
+                            {title: "RUN"},
+                            {title: "Burning Up (FIRE)"},
+                            {title: "Blood Sweat & Tears"},
+                            {title: "Spring Day"},
+                            {title: "DNA"},
+                            {title: "FAKE LOVE"},
+                            {title: "IDOL"},
+                            {title: "Boy With Luv (feat. Halsey)"},
+                            {title: "ON"},
+                            {title: "Dynamite"},
+                            {title: "Life Goes On"},
+                            {title: "Butter"},
+                            {title: "Yet To Come"},
+                            {title: "Run BTS"},
+                            {title: "Intro: Persona"},
+                            {title: "Stay"},
+                            {title: "Moon"},
+                            {title: "Jamais Vu"},
+                            {title: "Trivia: Seesaw"},
+                            {title: "BTS Cypher PT.3: KILLER (feat. Supreme Boi)"},
+                            {title: "Outro: Ego"},
+                            {title: "Her"},
+                            {title: "Filer"},
+                            {title: "Friends"},
+                            {title: "Singularity"},
+                            {title: "00:00 (Zero O'Clock)"},
+                            {title: "Euphoria"},
+                            {title: "Dimple"},
+                            {title: "For Youth"}
+                    ]}}
+            ]
+        },
+        songs: {
+            create: [
+                {title: "Dream Glow (BTS World Original Soundtrack)"},
+                {title: "A Brand New day (BTS World Original Soundtrack)"},
+                {title: "All Night (BTS World Original Soundtrack)"},
+                {title: "Waste It On Me (with Steve Aoki)"},
+                {title: "Savage Love"},
+                {title: "Film out"},
+                {title: "Bad Decisions (with Snoop Dogg)"},
+                {title: "The Planet"},
+                {title: "Take Two"},
+            ]}
+    }});
 
 console.log('Created Bangtan:', { bts1, bts2, bts3, bts4, bts5, bts6, bts7, ot7 });
 
@@ -774,9 +862,7 @@ console.log('Created Bangtan:', { bts1, bts2, bts3, bts4, bts5, bts6, bts7, ot7 
             email: "jkitch2012@gmail.com",
             password: "password",
             name: "Jess Williams",
-            bias: SUGA,
-            faveAlbums: [],
-            faveSongs: []
+            bias: SUGA
         }
     })
 

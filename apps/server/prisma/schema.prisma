@@ -27,10 +27,10 @@ model Bangtan {
 
 model Album {
   id           Int         @id @default(autoincrement())
-  title        String
+  albumTitle        String
   yearReleased Int
   artistId     Int
-  artist       Bangtan     @relation(fields: [artistId], references: [id])
+  name       Bangtan     @relation(fields: [artistId], references: [id])
   songs        Song[]
   FaveAlbum    FaveAlbum[]
 }
@@ -40,7 +40,7 @@ model Song {
   title    String
   albumId    Int?
   artistId     Int
-  artist       Bangtan     @relation(fields: [artistId], references: [id])
+  name       Bangtan     @relation(fields: [artistId], references: [id])
   album      Album?   @relation(fields: [albumId], references: [id])
   FaveSong FaveSong[]
 }
