@@ -862,7 +862,7 @@ console.log('Created Bangtan:', { bts1, bts2, bts3, bts4, bts5, bts6, bts7, ot7 
             email: "jkitch2012@gmail.com",
             password: "password",
             name: "Jess Williams",
-            bias: SUGA
+            bias: "SUGA"
         }
     })
 
