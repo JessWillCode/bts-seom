@@ -10,7 +10,7 @@ server.use(express.json());
 server.use(cors());
 
 //ROUTERS
-//users, bangtan
+//users, bangtan, albums, songs,
 
 
 
