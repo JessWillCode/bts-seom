@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const prisma = require('../config/client');
 
 //register
-router.post('/register', (req, res) => {
+router.post('/register', (req, res, next) => {
     const newUser = req.body;
     res.status(201).json({
         message: 'User registered',
         data: newUser
     });
+    next();
 });
 
 //login
@@ -16,6 +18,9 @@ router.post('/register', (req, res) => {
 // })
 
 //getAllUsers
+router.get('/', (req,res,next) => {
+
+})
 
 //getUserById
 

@@ -7,7 +7,6 @@ const usersRouter = require('./api/usersRouter');
 const albumsRouter = require('./api/albumsRouter');
 const songsRouter = require('./api/songsRouter');
 
-const prisma = new PrismaClient();
 const server = express();
 const PORT = process.env.PORT || 8080;
 
