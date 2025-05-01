@@ -1,6 +1,6 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient();
+let prisma = new PrismaClient();
 
 const main = async () => {
     // Create Bangtan Members

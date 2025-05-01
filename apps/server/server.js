@@ -15,10 +15,10 @@ server.use(cors());
 
 //ROUTERS
 //users, bangtan, albums, songs
-server.use('/routes/bts', btsRouter);
-server.use('/routes/users', usersRouter);
-server.use('/routes/albums', albumsRouter);
-server.use('/routes/songs', songsRouter);
+server.use('/api/bts', btsRouter);
+server.use('/api/users', usersRouter);
+server.use('/api/albums', albumsRouter);
+server.use('/api/songs', songsRouter);
 
 
 server.listen(PORT, () =>{
