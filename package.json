@@ -7,8 +7,6 @@
   ],
   "scripts": {
     "dev": "concurrently \"npm --prefix apps/client run dev\" \"npm --prefix apps/server run dev\"",
-    "build": "npm run build --prefix apps/client && npm run build --prefix apps/server",
-    "start": "npm run start --prefix apps/server"
   },
   "dependencies": {
     "concurrently": "^9.1.2",
