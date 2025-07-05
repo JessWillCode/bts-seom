@@ -34,8 +34,8 @@ apps/
 
 | Service | URL |
 |--------|-----|
-| Frontend | [Live Site]([https://your-client-url.onrender.com](https://bts-seom-frontend.onrender.com)) |
-| Backend  | [API Server]([https://your-server-url.onrender.com](https://bts-seom-backend.onrender.com)) |
+| Frontend | [Live Site](https://bts-seom-frontend.onrender.com) |
+| Backend  | [API Server](https://bts-seom-backend.onrender.com) |
 
 > **Note:** VITE_API_BASE_URL is configured for API proxying during development.
 
