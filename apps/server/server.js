@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const { PrismaClient } = require("@prisma/client");
@@ -6,6 +5,10 @@ const btsRouter = require('./routes/btsRouter');
 const usersRouter = require('./routes/usersRouter');
 const albumsRouter = require('./routes/albumsRouter');
 const songsRouter = require('./routes/songsRouter');
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 const server = express();
 const PORT = process.env.PORT || 8080;
