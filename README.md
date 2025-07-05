@@ -1,12 +1,73 @@
-# React + Vite
+# BTS SEOM – Full-Stack Monorepo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a full-stack web application that lets users explore, favorite, and track BTS songs and albums. Built as a monorepo to experiment with shared deployment patterns and streamline full-stack delivery for student and TA education.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📁 Project Structure
+```
+apps/
+├── client/ → Vite + React frontend
+└── server/ → Express + Prisma backend
+```
 
-## Expanding the ESLint configuration
+- **Client:** Deployed separately on Render (static site)
+- **Server:** Node/Express API with PostgreSQL (also on Render)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧪 Tech Stack
+
+**Frontend**
+- React (Vite)
+- Axios
+- Tailwind CSS & DaisyUI
+
+**Backend**
+- Node.js + Express
+- PostgreSQL + Prisma
+- JWT Auth (WIP)
+
+---
+
+## 🚀 Deployments
+
+| Service | URL |
+|--------|-----|
+| Frontend | [Live Site]([https://your-client-url.onrender.com](https://bts-seom-frontend.onrender.com)) |
+| Backend  | [API Server]([https://your-server-url.onrender.com](https://bts-seom-backend.onrender.com)) |
+
+> **Note:** VITE_API_BASE_URL is configured for API proxying during development.
+
+---
+
+## 🧩 Dev Setup
+
+```bash
+# Install both apps' dependencies
+cd apps/client && npm install
+cd ../server && npm install
+
+# Run locally
+cd ../server && npm run dev
+cd ../client && npm run dev
+```
+---
+
+## 🧩 Future Improvements
+
+- Add user dashboard to view and manage favorite albums and songs
+- Seed more detailed album and song data (tracklists, durations, etc.)
+- Complete and secure authentication system (JWT register/login)
+- Improve mobile responsiveness and UI polish
+- Implement optimistic UI updates and error handling
+- Write integration tests and seed tests
+
+---
+
+## 🧑‍💻 Author
+
+**Jessica Williams**  
+🌐 [GitHub: @JessWillCode](https://github.com/JessWillCode)  
+✍️ [Medium Articles](https://medium.com/@jesswillcode)  
+🎥 [YouTube: JessWillCode](https://www.youtube.com/@jesswillcode)
