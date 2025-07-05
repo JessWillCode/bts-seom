@@ -10,7 +10,7 @@ export default defineConfig({
         port: 5173,
         proxy: {
             "/api": {
-                target: "http://localhost:3001", // eslint-disable-line no-undef
+                target: "https://bts-seom-backend.onrender.com", // eslint-disable-line no-undef
                 changeOrigin: true,
                 secure: false,
             },
